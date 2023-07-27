@@ -3,13 +3,13 @@ import GitHubProvider from 'next-auth/providers/github';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 export const options: NextAuthOptions = {
-    providers: [
+    providers: [ // http://localhost:3000/api/auth/providers -> devolverá objetos con:
     
-       GitHubProvider({
+       GitHubProvider({                                             // signinUrl: "http://localhost:3000/api/auth/signin/github"
             clientId: process.env.GITHUB_ID as string,
             clientSecret: process.env.GITHUB_SECRET as string,
        }),
-       CredentialsProvider({
+       CredentialsProvider({                                        // signinUrl: "http://localhost:3000/api/auth/signin/credentials"
             name: "Credentials",
             credentials: {
                 username:{
